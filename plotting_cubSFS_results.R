@@ -68,7 +68,7 @@ ggplot(data) + geom_rect(mapping=aes(xmin=18000,
   theme(legend.key.size = unit(0.5,"line")) + scale_x_reverse(expand=c(0,0)) + facet_wrap(~expanding)
 
 # Saving this graph
-ggsave("combined_cubSFS_figS6.pdf",height=8.7,width=8.7,units="cm")
+ggsave("combined_cubSFS_figS2.pdf",height=8.7,width=8.7,units="cm")
 
 # Getting some summary statistics from our data based on median values
 data_summary <- data %>% group_by(Species) %>% summarise(`N at time 0`=median[time==0],`N at time 1000`=median[time==1000],`Is population expanding?`=ifelse(`N at time 0`>`N at time 1000`,"Yes","No"),`N at start of expansion`=ifelse(`Is population expanding?`=="Yes",min(median),NA),`Fold expansion`=ifelse(`Is population expanding?`=="Yes",`N at time 0`/`N at start of expansion`,NA),`Time at start of expansion`=ifelse(`Is population expanding?`=="Yes",time[median==`N at start of expansion`],NA)) %>% arrange(desc(`Time at start of expansion`),`N at time 0`)

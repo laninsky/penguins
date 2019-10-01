@@ -89,7 +89,7 @@ ggplot(data,aes(x=factor(Taxa_common_name,levels=names(penguin_colours)),y=Delta
   theme_bw(base_size = 8) +
   scale_x_discrete(labels = function(x) str_wrap(x, width = 10))
 
-ggsave("SNAPP_by_species_FigS9.pdf",height=8.7,width=17.8,units="cm")
+ggsave("SNAPP_by_species_FigS8.pdf",height=8.7,width=17.8,units="cm")
 
 #6. Plot delta theta values by species and by age of node they represent the delta theta over
 # (young nodes may not be showing the overall trends that have occured since the LGM)
@@ -169,7 +169,7 @@ for (i in 1:length(species_order)) {
 
 plot_to_write <- arrangeGrob(grobs=groblist, ncol=2)
 
-ggsave("SNAPP_node_age_by_species_diff_axes_Figs10.pdf",plot_to_write,width=8.7,height=17.8,units="cm")
+ggsave("SNAPP_node_age_by_species_diff_axes_Figs9.pdf",plot_to_write,width=8.7,height=17.8,units="cm")
 
 sessionInfo()
 #R version 3.5.1 (2018-07-02)

@@ -1,6 +1,6 @@
 # This script plots a longer temporal slice than the original plotting_cubsSFS_results script
 # Working directory should be where the *resAlpha2.rds and *boot.res.rds files are from CubSFS analysis
-setwd(".././../../alanaalexander/Dropbox/penguins/CubSFS/")
+setwd("..")
 
 # Loading in required libraries
 library(CubSFS)
@@ -87,12 +87,7 @@ penguin_colours <- penguin_colours[order(factor(names(penguin_colours), levels=c
 data$Species <- factor(data$Species, levels = c("Macaroni and Royal","Eastern rockhopper","Adélie","Gentoo","Chinstrap","King","Emperor","Northern rockhopper","Western rockhopper","Fiordland crested"))
 
 # Plotting all CIs on one graph with a logged y axis
-ggplot(data) + geom_rect(mapping=aes(xmin=135000, 
-                                     xmax=194000,
-                                     ymin=min(Nt,LCL,median,UCL),
-                                     ymax=max(Nt,LCL,median,UCL)), 
-                         color="black", fill="grey",size=0.1) + 
-  geom_rect(mapping=aes(xmin=18000, 
+ggplot(data) +  geom_rect(mapping=aes(xmin=18000, 
                                      xmax=25000,
                                      ymin=min(Nt,LCL,median,UCL),
                                      ymax=max(Nt,LCL,median,UCL)), 
@@ -153,12 +148,7 @@ penguin_colours <- penguin_colours[order(factor(names(penguin_colours), levels=a
 data2$Species <- factor(data2$Species, levels = as.character(data_summary$Species))
 
 # Plotting all species with the same y-axis (logged)
-ggplot(data2) + geom_rect(mapping=aes(xmin=135000, 
-                                      xmax=194000,
-                                      ymin=min(Nt,LCL,median,UCL),
-                                      ymax=max(Nt,LCL,median,UCL)), 
-                          color="black", fill="grey",size=0.1)  + 
-  geom_rect(mapping=aes(xmin=18000, 
+ggplot(data2) + geom_rect(mapping=aes(xmin=18000, 
                                        xmax=25000,
                                        ymin=min(Nt,LCL,median,UCL),
                                        ymax=max(Nt,LCL,median,UCL)), 
@@ -181,12 +171,7 @@ data <- data %>% arrange(factor(Species, levels = data_summary$Species))
 
 for (i in 1:length(unique(data$Species))) {
   temp <- data %>% filter(Species==(unique(data$Species))[i])
-  groblist[[i]] <- ggplot(temp)  + geom_rect(mapping=aes(xmin=135000, 
-                                                         xmax=194000,
-                                                         ymin=min(Nt,LCL,median,UCL),
-                                                         ymax=max(Nt,LCL,median,UCL)), 
-                                             color="black", fill="grey",size=0.1) + 
-    geom_rect(mapping=aes(xmin=18000, 
+  groblist[[i]] <- ggplot(temp)  +   geom_rect(mapping=aes(xmin=18000, 
                                                          xmax=25000,
                                                          ymin=min(Nt,LCL,median,UCL),
                                                          ymax=max(Nt,LCL,median,UCL)), 
@@ -211,12 +196,7 @@ groblist <- list()
 
 for (i in 1:length(unique(data$Species))) {
   temp <- data %>% filter(Species==(unique(data$Species))[i])
-  groblist[[i]] <- ggplot(temp)  + geom_rect(mapping=aes(xmin=135000, 
-                                                         xmax=194000,
-                                                         ymin=min(Nt,LCL,median,UCL),
-                                                         ymax=max(Nt,LCL,median,UCL)), 
-                                             color="black", fill="grey",size=0.1) + 
-    geom_rect(mapping=aes(xmin=18000, 
+  groblist[[i]] <- ggplot(temp)  +   geom_rect(mapping=aes(xmin=18000, 
                                                          xmax=25000,
                                                          ymin=min(Nt,LCL,median,UCL),
                                                          ymax=max(Nt,LCL,median,UCL)), 
@@ -231,12 +211,7 @@ for (i in 1:length(unique(data$Species))) {
     facet_grid(~ Species) + scale_y_log10(expand=c(0,0)) + scale_x_reverse(expand=c(0,0))
 }
 temp <- data %>% filter(Species==(unique(data$Species))[7])
-groblist[[7]] <- ggplot(temp) + geom_rect(mapping=aes(xmin=135000, 
-                                                      xmax=194000,
-                                                      ymin=min(Nt,LCL,median,UCL),
-                                                      ymax=max(Nt,LCL,median,UCL)), 
-                                          color="black", fill="grey",size=0.1)  + 
-  geom_rect(mapping=aes(xmin=18000, 
+groblist[[7]] <- ggplot(temp) +   geom_rect(mapping=aes(xmin=18000, 
                                                        xmax=25000,
                                                        ymin=min(Nt,LCL,median,UCL),
                                                        ymax=max(Nt,LCL,median,UCL)), 
@@ -275,12 +250,7 @@ penguin_colours <- penguin_colours[order(factor(names(penguin_colours), levels=c
 
 for (i in 1:length(species_order)) {
   temp <- data %>% filter(Species==species_order[i])
-  groblist[[i]] <- ggplot(temp) + geom_rect(mapping=aes(xmin=135000, 
-                                                        xmax=194000,
-                                                        ymin=min(Nt,LCL,median,UCL),
-                                                        ymax=max(Nt,LCL,median,UCL)), 
-                                            color="black", fill="grey",size=0.1)+ 
-    geom_rect(mapping=aes(xmin=18000, 
+  groblist[[i]] <- ggplot(temp) +   geom_rect(mapping=aes(xmin=18000, 
                                                          xmax=25000,
                                                          ymin=min(Nt,LCL,median,UCL),
                                                          ymax=max(Nt,LCL,median,UCL)), 
@@ -296,4 +266,4 @@ for (i in 1:length(species_order)) {
 }
 
 plot_to_write <- arrangeGrob(grobs=groblist, ncol=2)
-ggsave("facetwrap_diff_log_x_cubSFS_1mill_figS7.pdf",plot_to_write,width=8.7,height=17.8,units="cm")
+ggsave("facetwrap_diff_log_x_cubSFS_1mill_figS3.pdf",plot_to_write,width=8.7,height=17.8,units="cm")
