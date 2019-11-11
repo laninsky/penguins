@@ -16,7 +16,7 @@ Taxa_scientific - scientific name of species included in analysis
 Taxa_order_for_graphing - desired order (left to right) for plotting of taxa  
 Location_order_for_graphing  - desired order (left to right) for plotting of locations  
 Overall_order - overall order for plotting of locations (order fields were used to sort data before importing into R)
-Node_height - in substitutions per site
+Node_height - in substitutions per site  
 Gen_time - generation time in years
 
 ## Description
