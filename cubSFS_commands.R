@@ -55,6 +55,8 @@ source("CubSFS/CubSFS/R/estimateCubSFS.R")
 source("CubSFS/CubSFS/R/estimateAlpha.R")
 # had an error that stopped AiCc of folded spectra
 source("CubSFS/CubSFS/R/AicCubSFS.R")
+# These modified files can be found in the CubSFS/CubSFS/R/ directory of this repository
+
 
 #6. Loading in the data
 # object should be a named numeric vector, and include monomorphic sites 
