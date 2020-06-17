@@ -60,8 +60,6 @@ source("CubSFS/CubSFS/R/AicCubSFS.R")
 
 #6. Loading in the data
 # object should be a named numeric vector, and include monomorphic sites 
-# (for now). Note: has to be a rounded SFS: will not work with fractions
-# e.g. after downprojecting
 obsSFS <- read_table2(sfsfilename,skip = 1)
 obsSFS <- as.matrix(obsSFS)[1,]
 obsSFS <- round(obsSFS,digits=0)
