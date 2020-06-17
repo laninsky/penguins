@@ -25,7 +25,7 @@ The CubSFS scripts describe the steps taken to infer demographic history from an
 The SNAPP script describes the steps taken to plot the change in theta inferred from SNAPP across species.
 
 ## To cite:
-Theresa L. Cole, Ludovic Dutoit, Nic Dussex, Tom Hart, Alana Alexander, María José Frugone, Jane L. Younger,  Gemma V. Clucas, Yves Cherel, Richard Cuthbert, Ursula Ellenberg, Steven R. Fiddaman, David Houston, Pierre Jouventin, Thomas Mattern, Gary Miller, Colin Miskelly, Paul Nolan, Michael J. Polito, Petra Quillfeldt, Peter G. Ryan, Adrian Smith, Alan JD Tennyson, David Thompson, Barbara Wienecke, Juliana A. Vianna, Jonathan M. Waters. Receding ice drove rapid expansions in eight Southern Ocean penguins. 
+Theresa L. Cole, Ludovic Dutoit, Nic Dussex, Tom Hart, Alana Alexander, María José Frugone, Jane L. Younger,  Gemma V. Clucas, Yves Cherel, Richard Cuthbert, Ursula Ellenberg, Steven R. Fiddaman, David Houston, Pierre Jouventin, Thomas Mattern, Gary Miller, Colin Miskelly, Paul Nolan, Michael J. Polito, Petra Quillfeldt, Peter G. Ryan, Adrian Smith, Alan JD Tennyson, David Thompson, Barbara Wienecke, Juliana A. Vianna, Jonathan M. Waters. Receding ice drove rapid expansions in eight Southern Ocean penguins. Proceedings of the National Academy of Sciences 116, no. 52 (2019): 26690-26696.
 
 Please also cite R and these packages, without which the analyses would not be possible:  
 - CubSFS
